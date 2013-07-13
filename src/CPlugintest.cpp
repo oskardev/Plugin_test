@@ -157,8 +157,6 @@ namespace testPlugin
             m_GPUMesh.modifyMesh();
         }
 
-        //CryLog( "wtf3 gEnv %p", gEnv );
-        //CryLog( "wtf3 gEnv->pGame %p", gEnv->pGame );
         m_frameNum++;
         return;
     }
