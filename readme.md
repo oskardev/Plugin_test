@@ -12,6 +12,19 @@ Use the installer or extract the files to your CryEngine SDK Folder so that the 
 
 The plugin manager will automatically load up the plugin when the game/editor is restarted or if you directly load it.
 
+
+In Game.cpp:
+
+Includes:
+#include <IPluginManager_impl.h>
+#include <IPluginManager.h>
+#include "../Plugin_test/inc/IPlugintest.h"
+
+Update func:
+    testPlugin::IPlugintest* pPlugintest = 0;
+    pPlugintest = PluginManager::safeGetPluginConcreteInterface<testPlugin::IPlugintest*>("test");
+    pPlugintest->Update();
+
 CVars / Commands
 ================
 * ```prefix_samplecvar```

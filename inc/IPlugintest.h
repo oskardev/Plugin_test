@@ -19,8 +19,9 @@ namespace testPlugin
         */
         virtual PluginManager::IPluginBase* GetBase() = 0;
 
+        /**
+        * @brief Interface called by the game
+        */
         virtual void Update() = 0;
-
-        // TODO: Add your concrete interface declaration here
     };
 };

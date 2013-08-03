@@ -141,9 +141,9 @@ namespace testPlugin
     {
         //cuda_testFunc();
 
-        //gEnv->pLog->LogAlways( "wtf - %d", m_frameNum );
+        gEnv->pLog->LogAlways( "wtf - %d", m_frameNum );
 
-        if ( false == m_fExecuted )
+        /*if ( false == m_fExecuted )
         {
             if ( 0 != gEnv->pGame->GetIGameFramework()->GetClientActor() )
             {
@@ -155,7 +155,7 @@ namespace testPlugin
         else
         {
             m_GPUMesh.modifyMesh();
-        }
+        }*/
 
         m_frameNum++;
         return;
