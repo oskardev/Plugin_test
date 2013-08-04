@@ -24,6 +24,15 @@
       <UniqueIdentifier>{c0a95c4c-0cf0-49ca-8c66-7f2dfbb67df2}</UniqueIdentifier>
       <Extensions>nsi;nsh</Extensions>
     </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{bb7b4bfa-508b-4e65-a1e1-1cbd5ffd8ec5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\DX9">
+      <UniqueIdentifier>{804aaf6b-fea4-481e-bade-01970cf9cb34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\DX11">
+      <UniqueIdentifier>{43588854-7c9b-4029-9bbb-38de8e13f682}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\readme.md" />
@@ -65,6 +74,15 @@
     <ClCompile Include="..\src\CGPUMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\CPluginD3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dx11\CD3DSystemDX11.cpp">
+      <Filter>Systems\DX11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\dx9\CD3DSystemDX9.cpp">
+      <Filter>Systems\DX9</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\StdAfx.h">
@@ -81,6 +99,24 @@
     </ClInclude>
     <ClInclude Include="..\src\CGPUMesh.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\IPluginD3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CPluginD3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dx11\CD3DSystemDX11.h">
+      <Filter>Systems\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dx11\d3d11hook.h">
+      <Filter>Systems\DX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dx9\CD3DSystemDX9.h">
+      <Filter>Systems\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\dx9\d3d9hook.h">
+      <Filter>Systems\DX9</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

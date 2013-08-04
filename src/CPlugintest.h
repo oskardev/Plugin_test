@@ -7,6 +7,11 @@
 #include <IPluginManager.h>
 #include <IPluginBase.h>
 #include <CPluginBase.hpp>
+#include <IPluginD3D.h>
+#include <d3d9.h>
+#include <dxgi.h>
+#include <d3dcommon.h>
+#include <d3d11.h>
 
 #include <IPlugintest.h>
 #include <CGPUMesh.h>
@@ -20,9 +25,28 @@ namespace testPlugin
     * @brief Provides information and manages the resources of this plugin.
     */
     class CPlugintest :
+        private D3DPlugin::ID3DEventListener,
         public PluginManager::CPluginBase,
         public IPlugintest
     {
+        protected:
+            bool bDX9;
+            bool bDX11;
+            bool bExecuted;
+            bool bMeshCanBeCreated;
+            bool bDone;
+
+            union device    // Declare union type
+            {
+                void* ptr;
+                IDirect3DDevice9*   dx9;
+                ID3D11Device*       dx11;
+            } m_pDevice;
+
+            PluginManager::IPluginBase* m_pD3DPlugin;
+            D3DPlugin::IPluginD3D* m_pD3DSystem;
+            IDirect3DStateBlock9* m_pStateBlock;
+
         public:
             CPlugintest();
             ~CPlugintest();
@@ -81,11 +105,20 @@ namespace testPlugin
 
             void Update();
 
+            // D3D Plugin interfaces
+            void OnPrePresent();
+            void OnPostPresent();
+            void OnPreReset();
+            void OnPostReset();
+            void OnPostBeginScene();
+
             // TODO: Add your concrete interface implementation
         private:
             int m_frameNum;
             CGPUMesh m_GPUMesh;
             bool m_fExecuted;
+
+
     };
 
     extern CPlugintest* gPlugin;

@@ -15,9 +15,36 @@ namespace testPlugin
 
     CPlugintest::CPlugintest()
     {
+        CryLog( "zomg CPlugintest" );
         gPlugin = this;
         m_frameNum = 0;
         m_fExecuted = false;
+        m_pD3DPlugin = 0;
+        //m_pD3DPlugin = gPluginManager->GetPluginByName("test");//D3D
+        //gEnv->pLog->LogAlways( "zomg CPlugintest m_pD3DPlugin: %p", m_pD3DPlugin);
+        /* CryLog( "zomg CPlugintest 2", 0 );
+         m_pD3DSystem = static_cast<D3DPlugin::IPluginD3D*>(m_pD3DPlugin ? m_pD3DPlugin->GetConcreteInterface() : NULL);
+
+         CryLog( "zomg CPlugintest 3", 0 );
+        if(m_pD3DSystem)
+        {
+             CryLog( "zomg CPlugintest 4", 0 );
+         // Initialize the device
+         m_pDevice.ptr = m_pD3DSystem->GetDevice();
+         bDX9 = false;
+             bDX11 = true;
+
+         //if(bDX9 && m_pDevice.ptr)
+             if(bDX11 && m_pDevice.ptr)
+         { // Create D3D State [Optional: if you don't modify it]
+             //m_pDevice.dx9->CreateStateBlock(D3DSBT_ALL, &m_pStateBlock);
+                 //m_pDevice.dx11->creates
+         }
+
+         // the listeners will be called renderer thread.
+         m_pD3DSystem->RegisterListener(this);
+        }*/
+
     }
 
     CPlugintest::~CPlugintest()
@@ -160,6 +187,33 @@ namespace testPlugin
         m_frameNum++;
         return;
     }
+
+    void CPlugintest::OnPrePresent()
+    {
+        CryLog( "zomg OnPrePresent %d", m_frameNum );
+        return;
+    }
+
+    void CPlugintest::OnPostPresent()
+    {
+        return;
+    }
+
+    void CPlugintest::OnPreReset()
+    {
+        return;
+    }
+
+    void CPlugintest::OnPostReset()
+    {
+        return;
+    }
+
+    void CPlugintest::OnPostBeginScene()
+    {
+        return;
+    }
+
 
     // TODO: Add your plugin concrete interface implementation
 }

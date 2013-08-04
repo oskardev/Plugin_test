@@ -37,8 +37,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\CGPUMesh.cpp" />
+    <ClCompile Include="..\src\CPluginD3D.cpp" />
     <ClCompile Include="..\src\CPlugintest.cpp" />
     <ClCompile Include="..\src\CPlugintestModule.cpp" />
+    <ClCompile Include="..\src\dx11\CD3DSystemDX11.cpp" />
+    <ClCompile Include="..\src\dx9\CD3DSystemDX9.cpp" />
     <ClCompile Include="..\src\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -47,9 +50,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\inc\IPluginD3D.h" />
     <ClInclude Include="..\inc\IPlugintest.h" />
     <ClInclude Include="..\src\CGPUMesh.h" />
+    <ClInclude Include="..\src\CPluginD3D.h" />
     <ClInclude Include="..\src\CPlugintest.h" />
+    <ClInclude Include="..\src\dx11\CD3DSystemDX11.h" />
+    <ClInclude Include="..\src\dx11\d3d11hook.h" />
+    <ClInclude Include="..\src\dx9\CD3DSystemDX9.h" />
+    <ClInclude Include="..\src\dx9\d3d9hook.h" />
     <ClInclude Include="..\src\StdAfx.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
